@@ -37,6 +37,5 @@ streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_row)
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
-my_data_row.append(add_my_fruit)
-streamlit.dataframe(my_data_row)
+my_cur.excecute('INSERT INTO fruit_load_list (FRUIT_NAME), VALUES (?)', add_my_fruit)
 streamlit.write('Thanks for adding', add_my_fruit)
